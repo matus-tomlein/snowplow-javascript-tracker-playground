@@ -1,0 +1,19 @@
+{
+  "name": "snowplow-javascript-tracker-playground",
+  "version": "1.0.0",
+  "description": "Playground for experimenting with the Snowplow JavaScript tracker",
+  "main": "index.js",
+  "dependencies": {
+    "https-localhost": "^4.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "snowplow"
+  ],
+  "author": "Matus Tomlein",
+  "license": "ISC"
+}
