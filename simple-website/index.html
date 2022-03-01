@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Website</title>
 </head>
 
 <body>
@@ -20,11 +20,16 @@
                 webPage: false
             }
         });
+        window.snowplow('addPlugin', 
+            '/screen-view-plugin/dist/index.umd.js',
+            ['snowplowSimpleTemplate', 'ScreenViewPlugin']
+        );
         window.snowplow('trackPageView');
+        window.snowplow('trackScreenView', {name: 'Main Screen'});
     </script>
 
     <h1>
-        Page View tracked to http://localhost:9090
+        Page View and Screen View tracked to http://localhost:9090
     </h1>
 </body>
 
