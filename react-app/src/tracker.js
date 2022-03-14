@@ -2,14 +2,15 @@ import { newTracker, trackPageView, enableActivityTracking } from "@snowplow/bro
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { ScreenViewPlugin, trackScreenView } from 'screen-view-plugin';
+import { FormTrackingPlugin } from '@snowplow/browser-plugin-form-tracking';
 
 let tracker = newTracker('ns1', 'http://localhost:9090', {
-  plugins: [ ScreenViewPlugin() ]
+  plugins: [ FormTrackingPlugin(), ScreenViewPlugin() ]
 });
 
 enableActivityTracking({
-  minimumVisitLength: 5,
-  heartbeatDelay: 3
+  minimumVisitLength: 15,
+  heartbeatDelay: 10
 });
 
 const useLocationChange = () => {

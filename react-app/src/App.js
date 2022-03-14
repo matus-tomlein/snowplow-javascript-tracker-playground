@@ -9,7 +9,8 @@ function App() {
     <div className="App">
       <h1>Welcome!</h1>
       <p>
-        <Link to="/snowplow">About Snowplow</Link>
+        <Link to="/snowplow">About Snowplow</Link> |{' '}
+        <Link to="/form">Form tracking demo</Link>
       </p>
     </div>
   );

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Snowplow from "./routes/snowplow";
+import Form from './routes/form';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
@@ -12,6 +13,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="snowplow" element={<Snowplow />} />
+        <Route path="form" element={<Form />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
