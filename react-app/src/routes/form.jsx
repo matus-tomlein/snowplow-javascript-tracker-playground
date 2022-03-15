@@ -9,7 +9,7 @@ export default function Form() {
         enableFormTracking({
             options: {
                 forms: { allowlist: ['formy-mcformface'] },
-                events: ['submit', 'focus', 'change']
+                events: ['submit_form', 'focus_form', 'change_form']
             },
         });
     });
