@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@snowplow/browser-tracker": "file:../../snowplow-javascript-tracker/trackers/browser-tracker/",
-    "@snowplow/browser-plugin-form-tracking": "file:../../snowplow-javascript-tracker/plugins/browser-plugin-form-tracking/",
+    "@snowplow/browser-tracker": "link:../../snowplow-javascript-tracker/trackers/browser-tracker/",
+    "@snowplow/browser-plugin-form-tracking": "link:../../snowplow-javascript-tracker/plugins/browser-plugin-form-tracking/",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",

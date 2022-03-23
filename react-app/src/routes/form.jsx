@@ -9,7 +9,7 @@ export default function Form() {
         enableFormTracking({
             options: {
                 forms: { allowlist: ['formy-mcformface'] },
-                events: ['submit_form', 'focus_form', 'change_form']
+                events: ['submit_form', 'change_form', 'focus_form']
             },
         });
     });
@@ -25,23 +25,34 @@ export default function Form() {
             <form id="myForm" className="formy-mcformface" onSubmit={() => alert('Submitted')}>
                 <fieldset id="fields">
                     <legend>Personal Info:</legend>
-                    <label for="fname">First name:</label><br />
+                    <label htmlFor="fname">First name:</label><br />
                     <input type="text" id="fname" name="fname" placeholder="John" className="test" /><br />
-                    <label for="lname">Last name:</label><br />
+                    <label htmlFor="lname">Last name:</label><br />
                     <input type="text" id="lname" name="lname" placeholder="Doe" /><br /><br />
                     <input type="radio" id="bike" name="vehicle" placeholder="Bike" />
-                    <label for="bike"> I have a bike</label><br />
+                    <label htmlFor="bike"> I have a bike</label><br />
                 </fieldset>
-                <label for="cars">Choose a car:</label>
+                <label htmlFor="cars">Choose a car:</label>
                 <select id="cars" name="cars">
                     <option id="volvo" value="volvo">Volvo</option>
                     <option id="saab" value="saab">Saab</option>
                 </select>
                 <br />
-                <label for="message">Enter a message:</label><br />
-                <textarea id="message" name="message" rows="10" cols="30">This is a message</textarea><br />
+                <label htmlFor="message">Enter a message:</label><br />
+                <textarea id="message" name="message" rows="10" cols="30" defaultValue={'This is a message'}></textarea><br />
                 <input type="checkbox" id="terms" name="terms" value="agree" />
-                <label for="terms"> Agree to terms</label><br />
+                <label htmlFor="terms"> Agree to terms</label><br />
+                <input type="submit" value="Submit" id="submit" />
+            </form>
+
+            <h3>Untracked form</h3>
+
+            <form id="otherForm" className="forman" onSubmit={() => alert('Submitted')}>
+                <fieldset id="fields">
+                    <legend>Personal Info:</legend>
+                    <label htmlFor="fname">First name:</label><br />
+                    <input type="text" id="fname" name="fname" placeholder="John" className="test" /><br />
+                </fieldset>
                 <input type="submit" value="Submit" id="submit" />
             </form>
         </div>

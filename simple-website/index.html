@@ -24,6 +24,34 @@
             '/screen-view-plugin/dist/index.umd.js',
             ['snowplowSimpleTemplate', 'ScreenViewPlugin']
         );
+
+        // Create a context entity to be used in global context
+        let contextEntity = {
+            schema: 'iglu:com.acme/user_context/jsonschema/1-0-0',
+            data: {
+                userid: 1234,
+                name: 'john doe'
+            }
+        };
+
+        // Define and add the global context
+        let globalContextDefinition = [
+            // { accept: 'iglu:com.snowplowanalytics.mobile/screen_view/jsonschema/1-0-0' }, // rule that restricts schemas where to add
+            function (args) { return args.eventType == 'pv'; },
+            contextEntity
+        ]
+        window.snowplow('addGlobalContexts', [globalContextDefinition]);
+
+        const contextGenerator = (args) => {
+            if (args.eventType == 'pv') {
+                return {
+                    schema: 'iglu:com.acme.marketing/some_event/jsonschema/1-0-0',
+                    data: { test: 1 },
+                };
+            }
+        };
+        window.snowplow('addGlobalContexts', [contextGenerator]);
+
         window.snowplow('trackPageView');
         window.snowplow('trackScreenView', {name: 'Main Screen'});
     </script>

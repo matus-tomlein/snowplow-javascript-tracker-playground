@@ -8,10 +8,11 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome!</h1>
-      <p>
-        <Link to="/snowplow">About Snowplow</Link> |{' '}
-        <Link to="/form">Form tracking demo</Link>
-      </p>
+      <dl>
+        <dt><Link to="/snowplow">About Snowplow</Link></dt>
+        <dt><Link to="/form">Form tracking demo</Link></dt>
+        <dt><Link to="/iframe_form">Form tracking demo in iframe</Link></dt>
+      </dl>
     </div>
   );
 }

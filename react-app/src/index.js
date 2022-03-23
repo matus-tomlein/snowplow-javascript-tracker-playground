@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Snowplow from "./routes/snowplow";
 import Form from './routes/form';
+import IframeForm from './routes/iframeForm';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="snowplow" element={<Snowplow />} />
         <Route path="form" element={<Form />} />
+        <Route path="iframe_form" element={<IframeForm />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
